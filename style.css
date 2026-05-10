@@ -26,6 +26,14 @@ a, p {
   grid-template-columns: 33% 37% 30%;
   padding: 5px
 }
+@media screen and (max-width: 720px) {
+    .header-container {
+        display: grid;
+        grid-template-columns: 100%;
+    padding: 5px
+    }
+}
+
 .header-container div {
   text-align: center;
 }
@@ -53,6 +61,12 @@ a, p {
     position: absolute;
     z-index: -1;
 }
+@media screen and (max-width: 720px) {
+    .polka, .leftPolka, .rightPolka, .polka-bg {
+        display: none;
+    }
+}
+
 
 /* -> NAME CARD */
 
@@ -63,11 +77,11 @@ a, p {
 .nameCardSection {
     color: #613965;
     background-color: rgba(249,235,243,0.7);
-    padding-bottom: 5px;
+    padding: 20px auto 15px auto;
     border-radius: 75px;
-    padding-top: 20px;
 }
 .nameCardSection img {
+    width: 80%;
     padding: 30px 0px 5px 0px;
 }
 .nameCardSection hr {
@@ -81,12 +95,40 @@ a, p {
     font-size: 2.2em;
     line-height: 1.4;
 }
+@media screen and (max-width: 720px) {
+    .nameCardSection-wrapper {
+        margin: -10px 0 0 0;
+        padding: 0 0 20px 0;
+    }
+    .nameCardSection img {
+        width: 70%;
+        padding: 5px auto 5px auto;
+    }
+    .nameCardSection hr {
+        height: 1px;
+        margin: auto;
+    }
+    .nameCardSection p {
+        margin: 0;
+        font-size: 1.5em;
+        line-height: 1.2;
+    }
+}
 
 /* -> HEADSHOT */
 .headShotImg {
     padding-top: 33px;
     border-radius: 50px;
-    margin: auto
+    margin: auto;
+    width: 93%;
+}
+@media screen and (max-width: 720px) {
+    .headShotImg {
+        padding-top: 5px;
+        border-radius: 15px;
+        margin: auto;
+        width: 50%;
+    }
 }
 
 /* -> MINI NAV */
@@ -97,6 +139,17 @@ a, p {
     font-size: 1.6em;
     color: thistle;
 }
+@media screen and (max-width: 720px) {
+    .miniNav {
+        padding-top: 0px;
+        margin-top: 10px;
+    }
+    .miniNav p {
+        font-size: 1em;
+        color: thistle;
+    }
+}
+
 
 
 /* MAIN BODY SECTION */
@@ -107,19 +160,79 @@ a, p {
     padding: 20px 250px;
     text-align: center;
 }
+.mainBody .title {
+    font-size: 3.5em    
+}
+.mainBody .content {
+    font-size: 1.5em; 
+}
+@media screen and (max-width: 720px) {
+    .mainBody {
+        padding: 25px 20px 0px;
+        margin-top: 20px;
+    }
+    .mainBody .title {
+        font-size: 1.8em;
+        line-height: 0.1;
+    }
+    .mainBody .content {
+        font-size: 1em;
+    }
+}
 .showcase-container {
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
+    margin-bottom: 150px;
 }
-.showcase-container-box {
+.showcase-container-box, .showcase-container-box-short {
     margin: 10px;
     display: grid;
     grid-template-rows: 4fr 1fr;  
     align-content: center;
 }
-.showcase-container-box div {
+.showcase-container-box div, .showcase-container-box-short div, .showcase-container-box div img, .showcase-container-box-short div img {
+    width: 100%;
     margin: auto;
+}
+@media screen and (max-width: 720px) {
+    .showcase-container {
+        margin-bottom: 30px;
+    }
+    .showcase-container-box, .showcase-container-box-short {
+        margin: 0;
+    }
+    .showcase-container-box-short {
+        grid-template-rows: 1fr 1fr;
+    }
+    .showcase-container-box div, .showcase-container-box-short div, .showcase-container-box div img, .showcase-container-box-short div img {
+        width: 100%;
+        margin: 0;
+    }
+}
+}
+.showcase-container .caption {
+    font-size: 1em;
+}
+.showcase-container .smallFlex {
+    width: 20%;
+}
+.showcase-container .mediumFlex {
+    width: 30%;
+}
+.showcase-container .bigFlex {
+    width: 40%;
+}
+.showcase-container .hugeFlex {
+    width: 45%;
+}
+@media screen and (max-width: 720px) {
+    .showcase-container .smallFlex, .showcase-container .mediumFlex, .showcase-container .bigFlex, .showcase-container .hugeFlex {
+        width: 100%;
+    }
+    .showcase-container .caption {
+        line-height: 1;
+    }
 }
 .video-container {
   width: 100%;
@@ -155,7 +268,6 @@ a, p {
 }
 
 
-
 /* FOOTER SECTION */
 .footer {
     text-align: center;
@@ -165,6 +277,11 @@ a, p {
 }
 .footer p, .footer p a {
     color: thistle; 
+}
+@media screen and (max-width: 720px) {
+    .jumpers {
+        display: none;
+    }
 }
 
 
@@ -205,4 +322,9 @@ a, p {
 #top-jump.is-visible {
     opacity: 1;
     pointer-events: auto;
+}
+@media screen and (max-width: 720px) {
+    .topJumpButton-div {
+        display: none;
+    }
 }
