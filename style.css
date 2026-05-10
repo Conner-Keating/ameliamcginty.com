@@ -1,0 +1,208 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    position: relative;
+    background: #F9EBF3;
+    margin: 0;
+}
+
+a, p {
+    color: #613965;
+}
+
+.section {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER SECTION */
+
+/* -> GRID LAYOUT */
+
+.header-container {
+  display: grid;
+  grid-template-columns: 33% 37% 30%;
+  padding: 5px
+}
+.header-container div {
+  text-align: center;
+}
+.header-container a {
+    color: thistle; 
+}
+
+/* -> POLKA-DOT HEADER BACKGROUND */
+
+.polka {
+    padding-top: 50px;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.leftPolka {
+    animation-name: bg-dots-scroll-left;
+    animation-duration: 15s;
+}
+.rightPolka {
+    animation-name: bg-dots-scroll-right;
+    animation-duration: 5s;
+}
+.polka-bg {
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+/* -> NAME CARD */
+
+.nameCardSection-wrapper {
+    padding-top: 155px;
+    padding-left: 15px;
+}
+.nameCardSection {
+    color: #613965;
+    background-color: rgba(249,235,243,0.7);
+    padding-bottom: 5px;
+    border-radius: 75px;
+    padding-top: 20px;
+}
+.nameCardSection img {
+    padding: 30px 0px 5px 0px;
+}
+.nameCardSection hr {
+    margin: -30px auto -50px auto;
+    height: 2px;
+    width: 70%;
+    color: #613965;
+    background-color: #613965;
+}
+.nameCardSection p {
+    font-size: 2.2em;
+    line-height: 1.4;
+}
+
+/* -> HEADSHOT */
+.headShotImg {
+    padding-top: 33px;
+    border-radius: 50px;
+    margin: auto
+}
+
+/* -> MINI NAV */
+.miniNav {
+    padding-top: 730px
+}
+.miniNav p {
+    font-size: 1.6em;
+    color: thistle;
+}
+
+
+/* MAIN BODY SECTION */
+.mainBody {
+    margin-top: 45px;
+    position: relative; 
+    background-color: #FBF3F8;
+    padding: 20px 250px;
+    text-align: center;
+}
+.showcase-container {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+.showcase-container-box {
+    margin: 10px;
+    display: grid;
+    grid-template-rows: 4fr 1fr;  
+    align-content: center;
+}
+.showcase-container-box div {
+    margin: auto;
+}
+.video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* CONTACT SECTION */
+.contact {
+    background-color: #613965;
+    color: #FBF3F8;
+    text-align: center;
+}
+.contact p, .contact p a {
+    color: white;
+    font-size: 2em;
+}
+.contact-button {
+    background-color: white;
+    border-radius: 25px;
+    padding: 20px 30px;
+    margin: -10px auto 30px auto;
+    display:inline-block;
+    cursor: pointer;
+    color: thistle;
+    text-decoration: none;
+    border: 2px solid thistle;
+}
+
+
+
+/* FOOTER SECTION */
+.footer {
+    text-align: center;
+}
+.footer p {
+    white-space: pre;
+}
+.footer p, .footer p a {
+    color: thistle; 
+}
+
+
+
+/* ANIMATIONS */
+
+@keyframes bg-dots-scroll-left {
+    from {
+        transform: translateX(0);
+    } to {
+        transform: translateX(-6%);
+    }
+}
+@keyframes bg-dots-scroll-right {
+    from {
+        transform: translateX(-6%);
+    } to {
+        transform: translateX(0);
+    }
+}
+
+/* TOP JUMP BUTTON STUFF */
+
+.topJumpButton-div {
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    bottom: 100px;
+    left: 93%
+}
+#top-jump {
+    opacity: 0; 
+    pointer-events: none;
+    transition: all 0.06s ease-in;
+} 
+#top-jump.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
